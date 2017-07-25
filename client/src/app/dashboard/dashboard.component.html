@@ -1,0 +1,27 @@
+<html>
+  <body>
+    <a [routerLink]="['/dashboard']">Bucket List</a>
+    <a [routerLink]="['/dashboard']">Home</a>
+    <a [routerLink]="['/']">Logout</a>
+  
+  
+    <h4>Welcome </h4>
+    <form name="newform" >
+      <input type="text" name="title" placeholder="title" [(ngModel)]="user.title" required minLength="5"/>
+      <input type="text" name="description" placeholder="description" [(ngModel)]="user.description" required minLength="10" />
+<select *ngFor="let list of lists">
+  <option value={{list.name}}>{{list.name}}</option></select>
+  
+<button (click)="addBucket()">Add to List</button>
+        </form>
+      <table>
+        
+        <tr *ngFor="let list of lists">
+          
+     <td> <input type="checkbox" name="check"/>  {{list. title}}</td><td> {{ list.description }} </td>{{list. createdAt}} <td>{{list.name}}</td>
+        </tr>
+        </table>
+       
+     
+      
+  </body></html>
